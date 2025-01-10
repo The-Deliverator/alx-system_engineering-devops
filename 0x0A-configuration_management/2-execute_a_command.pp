@@ -2,5 +2,6 @@
 
   exec { 'killmenow.':
     command => 'pkill killmenow',
-    onlyif  => 'pgrep  killmenow',
+    onlyif  => 'pgrep -f  killmenow',
+    path    => ['/root', '/usr/root'],
 }
