@@ -1,7 +1,5 @@
 # we are creating a process and killing it
 
-  exec { 'killmenow.':
-    command => 'pkill killmenow',
-    onlyif  => 'pgrep -f  killmenow',
-    path    => ['/root', '/usr/root'],
+  exec { 'pkill -f killmenow':
+    path => '/usr/bin/:/usr/local/bin/:/bin/',
 }
